@@ -1,5 +1,9 @@
 ## Creating a Blocipedia site for project #2
 
+#need to create application.yml file using figaro to hide application username and password
+#use application.example.yml as outline.
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
