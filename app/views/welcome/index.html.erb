@@ -1,2 +1,21 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<br />
+<div class="jumbotron">
+<h1>Blocipedia</h1>
+<p> <%= link to "Sign in," new_user_session_path, class: 'btn btn-primary' %> 
+    <% link _to "Sign up," new_user_registration_path, class: 'btn btn-primary' %> today!
+  </p>
+<div>
+
+<div class="row">
+  <div class="col md-4" align="center">
+  <p class="text-center">Blocipedia: Social, Mardown Wikis</p>
+</div><br />
+
+ <div class="row">
+  <div class="col-md-8" align="center">
+    <table class=" table">
+      <tr>
+        <td> Create and share Markdown wikis</td></tr>
+        <br />
+        <br />
+        <td>  <%= link_to "Sign Up", new_user_registration_path %></td>
