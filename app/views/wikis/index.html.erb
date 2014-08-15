@@ -1,2 +1,13 @@
-<h1>Wikis#index</h1>
-<p>Find me in app/views/wikis/index.html.erb</p>
+<h2 class="align-center">My Wikis</h2>
+<div class="col-md-8" align="center">
+  <table class= "table table-striped">
+ <% @wikis.each do |wiki| %>
+ <tr>
+  <td><%= link_to wiki.title, wiki %></td>
+</tr>
+ 
+<% end %>
+
+</table>
+
+</div>
