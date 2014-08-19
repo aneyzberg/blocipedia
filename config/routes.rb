@@ -1,5 +1,10 @@
 Blocipedia::Application.routes.draw do
- resources :wikis
+  get "collaborators/index"
+  get "collaborators/create"
+  get "collaborators/destroy"
+ resources :wikis do 
+  resources :collaborators, only: [:index, :create, :destroy]
+ end
 
   devise_for :users
 

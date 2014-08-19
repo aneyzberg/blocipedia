@@ -1,6 +1,7 @@
 class WikisController < ApplicationController
   def index
     @wikis = Wiki.all
+    authorize @wikis
   end
 
   def show
@@ -9,15 +10,18 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    authorize @wiki
   end
 
   def edit
-    wiki = Wiki.find(params[:id])
+    @wiki = Wiki.find(params[:id])
+    authorize @wiki
   end
 
   def update
     @wiki = Wiki.find(params[:id])
-    if @wiki.update_attributes(params.required(:wiki).permit(:title, :bdoy))
+    authorize @wiki
+    if @wiki.update_attributes(params.required(:wiki).permit(:title, :body))
       flash[:notice] = "Wiki was updated."
       redirect_to @wiki
     else
@@ -27,8 +31,9 @@ class WikisController < ApplicationController
   end
 
   def create
-    @wiki = Wike.new(params.require(:wiki).permit(:title, :body)
-    if wiki.save
+    @wiki = Wiki.new(params.require(:wiki).permit(:title, :body))
+    authorize @wiki
+    if @wiki.save
       flash[:notice] = "Wiki was saved."
       redirect to @wiki
     else 

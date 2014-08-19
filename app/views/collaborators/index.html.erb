@@ -1,0 +1,19 @@
+<h1>Add Collaborators to the <%= link_to @wiki.title, @wiki %></h1>
+
+<div class="row">
+  <div class="col-md-8" align="center">
+    <table class="table table-striped">
+      <tr>
+        <% @users.each do |user|  %>
+
+        <td><%= user.name %></td>
+        <td> <%= user.email %></td>
+            <% if @wiki.is_collabortor?(user) %>
+            <% else %>
+           <td> <%= link_to "Add as collaborator", wiki_collaborators_path(@wiki, user_id: user.id), method: :post, class: "btn btn-success" %></td>
+            <% end %>
+          <% end %>
+      </table>
+    </div>
+  </div>
+
