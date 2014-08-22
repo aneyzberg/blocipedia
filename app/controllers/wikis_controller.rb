@@ -6,6 +6,7 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
   end
 
   def new
@@ -38,6 +39,19 @@ class WikisController < ApplicationController
       redirect to @wiki
     else 
       flash[:error] = "There was an error saving your wiki. Please try again."
+    end
+  end
+
+  def destroy
+    @wiki = Wiki.find(params[:id])
+    authorize @wiki
+
+    if @wiki.destroy
+    flash[:notice] = "The Wiki has been deleted."
+    redirect_to wikis_path
+    else
+    flash[:notice] = "The Wiki has not been deleted. Please try again."
+    render :show
     end
   end
 
