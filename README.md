@@ -1,7 +1,10 @@
+
+
 ## Creating a Blocipedia site for project #2
 
 #need to create application.yml file using figaro to hide application username and password
 #use application.example.yml as outline.
+#environment variable for stripe integration are in locales/application.yml
 f
 
 == README
