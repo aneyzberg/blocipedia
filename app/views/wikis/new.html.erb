@@ -1,6 +1,4 @@
-var editor = new EpicEditor().load();
-<div id="epiceditor">
-<textarea id="my-edit-area">
+
 <h1> New Wiki </h1>
 
 <div class = "row">
@@ -15,8 +13,7 @@ var editor = new EpicEditor().load();
       <%= f.label :body %>
       <%= f.text_area :body, class: 'form-control', placeholder: "Enter wiki body" %>
       </div>
-    </textarea>
-</div>
+
       <div class="form-group">
       <%= f.submit "Save", class: 'btn btn-success' %>
       </div>
