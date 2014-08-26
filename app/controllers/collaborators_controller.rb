@@ -18,7 +18,7 @@ class CollaboratorsController < ApplicationController
   end
 
   def destroy
-    @collaborator = Collaborator.find(params[:user_id])
+    @collaborator = Collaborator.find(params[:id])
     authorize @collaborator
 
     if @collaborator.destroy
