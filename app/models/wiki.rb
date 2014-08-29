@@ -10,4 +10,6 @@ class Wiki < ActiveRecord::Base
   def collaborator_for(user)
     collaborators.where(user_id: user.id).first
   end
+
+  scope :visible_to, -> (user) {user ? all : where(private: false) }
 end
